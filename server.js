@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
 require('dotenv').config();
 
 // Import routes
@@ -15,21 +14,14 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000'], // Add your frontend URL when deployed
     credentials: true
-  }));
+}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));  // Add this line
-
-app.use(express.static(path.join(__dirname, '../portfolio-frontend/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../portfolio-frontend/build/index.html'));
-});
-
+app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from public folder
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use('/images', express.static('public/images'));
 
 // Routes
 app.use('/api/profile', profileRoutes);
@@ -38,17 +30,17 @@ app.use('/api/skills', skillRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/contact', contactRoutes);
 
+// Basic test route
+app.get('/', (req, res) => {
+    res.json({ message: 'Portfolio API is running' });
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('MongoDB connection error:', err));
 
-// Basic test route
-app.get('/', (req, res) => {
-    res.send('Portfolio API is running');
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
