@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000'], // Add your frontend URL when deployed
+    origin: ['http://localhost:3000', 'https://portfolio-backend-helgxq.fly.dev'],
     credentials: true
 }));
 app.use(express.json());
