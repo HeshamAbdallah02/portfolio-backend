@@ -21,6 +21,12 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // Add this line
 
+app.use(express.static(path.join(__dirname, '../portfolio-frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../portfolio-frontend/build/index.html'));
+});
+
 
 // Serve static files from public folder
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
