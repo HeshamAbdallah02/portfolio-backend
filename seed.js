@@ -21,7 +21,7 @@ async function seedDatabase() {
     hero: {
         greeting: "Hi, I'm",
         backgroundImage: {
-            url: "http://localhost:5000/images/hero-bg.webp",
+            url: "https://heshamabdallah.vercel.app/images/hero-bg.webp",
             opacity: 0.25,
             size: "cover",
             position: "center center"
@@ -31,7 +31,7 @@ async function seedDatabase() {
         title: "About Me",
         mainText: "As a fresh graduate in Computer Science, I've discovered my passion for web development during my academic journey. I love turning complex problems into simple, beautiful, and intuitive solutions.",
         secondaryText: "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts.",
-        imageUrl: "http://localhost:5000/images/profile.jpg"
+        imageUrl: "https://heshamabdallah.vercel.app/images/profile.jpg"
     },
     socialLinks: {
         github: "https://github.com/HeshamAbdallah02",
@@ -45,7 +45,7 @@ async function seedDatabase() {
             {
                 title: "Personal Portfolio",
                 description: "A modern portfolio website built with MERN stack and fully customizable through a dashboard.",
-                image: "http://localhost:5000/images/portfolio-project1.jpeg",
+                image: "https://heshamabdallah.vercel.app/images/portfolio-project1.jpeg",
                 technologies: ["React", "Node.js", "MongoDB", "Express"],
                 liveLink: "https://yourportfolio.com",
                 githubLink: "https://github.com/HeshamAbdallah02/portfolio-frontend"
@@ -53,14 +53,14 @@ async function seedDatabase() {
             {
                 title: "E7GEZLY Web Dashboard",
                 description: "A web based dashboard for PlayStations management that is synchronized with E7GEZLY mobile app.",
-                image: "http://localhost:5000/images/project2.jpeg",
+                image: "https://heshamabdallah.vercel.app/images/project2.jpeg",
                 technologies: [ "Node.js", "Firestore", "Firebase"],
                 liveLink: "https://football-2b5b9.firebaseapp.com/register-login.html"
             },
             {
                 title: "E7GEZLY App Backend",
                 description: "Backend server for E7GEZLY app using node.js based on Firebase backend services and Firestore non relational database.",
-                image: "http://localhost:5000/images/project3.webp",
+                image: "https://heshamabdallah.vercel.app/images/project3.webp",
                 technologies: [ "Node.js", "Firestore", "Firebase"],
                 liveLink: "https://play.google.com/store/apps/details?id=com.app.e7gezly"
             }
