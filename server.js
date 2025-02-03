@@ -16,7 +16,7 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://portfolio-frontend-delta-eight.vercel.app', // Add your Vercel domain
+        'https://heshamabdallah.vercel.app/', // Add your Vercel domain
     ],
     credentials: true
 }));
