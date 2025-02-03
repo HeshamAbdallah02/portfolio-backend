@@ -16,8 +16,10 @@ const app = express();
 app.use(cors({
     origin: [
         'http://localhost:3000',
-        'https://heshamabdallah.vercel.app', // Add your Vercel domain
+        'https://heshamabdallah.vercel.app',
     ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
     credentials: true
 }));
 app.use(express.json());
