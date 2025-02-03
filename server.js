@@ -14,7 +14,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://portfolio-backend-helgxq.fly.dev'],
+    origin: [
+        'http://localhost:3000',
+        'https://portfolio-frontend-delta-eight.vercel.app', // Add your Vercel domain
+    ],
     credentials: true
 }));
 app.use(express.json());
